@@ -1,0 +1,83 @@
+body {
+  background: #101010;
+  color: #eee;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+#spinner {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}
+
+.learning {
+  text-align: right;
+  margin-right: 17%;
+}
+
+.learning input.text {
+  border: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  background: #282828;
+  color: #80c080;
+}
+
+.learning input.button {
+  margin-right: 1em;
+  padding: 1em;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  border: 4px dotted #404040;
+}
+
+.learning input.post.button {
+  background: #288828;
+  color: #80c080;
+}
+
+.learning input.random.button {
+  background: #882828;
+  color: #c08080;
+}
+
+.learning input.post.button:hover {
+  background: #389838;
+  color: #c0f0c0;
+}
+
+.learning input.random.button:hover {
+  background: #983838;
+  color: #f0c0c0;
+}
+
+.learning span.phrase {
+  color: #80c080;
+}
+
+/* bottom */
+table.learned {
+  margin-top: 2em;
+  margin-left: 17%;
+}
+
+.learned td {
+  padding: 8px;
+}
+
+.learned a {
+  color: #80c080;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.learned a:hover {
+  color: #c0f0c0;
+}
+
+.learned td.teacher {
+  text-align: right;
+}

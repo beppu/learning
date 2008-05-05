@@ -1,0 +1,2 @@
+#!/bin/bash
+camping learning.rb -p 3303 -l -

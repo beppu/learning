@@ -1,0 +1,2 @@
+#!/bin/bash
+gvim -c 'colorscheme murphy' -p learning.rb learning/{config,helpers,migrations,models,controllers,views}.rb static/css/main.css
