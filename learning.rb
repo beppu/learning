@@ -29,12 +29,26 @@ module Learning::RequestWrapper
     @google_ad_slot    = Learning::GOOGLE_AD_SLOT
     @google_analytics  = Learning::GOOGLE_ANALYTICS
     response = super(*a)
+  end
+end
+
+module Learning::CookieWrapper
+  def service(*a)
+    @cgi_cookies    = Camping::H.new
+    @default_cookie = Camping::H.new.merge({ :path => '/' })
+    response = super(*a)
+    @cgi_cookies.each do |name, settings|
+      c = @default_cookie.merge(settings);
+      c.name = name
+      cookie = CGI::Cookie.new(c);
+      headers['Set-Cookie'].push(cookie.to_s)
+    end
     response
   end
 end
 
 module Learning
-  include Camping::Session, Learning::RequestWrapper
+  include Camping::Session, Learning::RequestWrapper, Learning::CookieWrapper
 
   def self.create
     Camping::Models::Session.create_schema

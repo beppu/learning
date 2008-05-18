@@ -139,6 +139,15 @@ module Learning::Controllers
           pair.save
         end
       end
+      @cgi_cookies[topic.word] = { 
+        :value   => topic.word,
+        :secure  => true
+      }
+      @cgi_cookies[teacher.word] = { 
+        :value   => teacher.word, 
+        :secure  => false,
+        :expires => Time.now + 4.years
+      }
       redirect R(Home)
     end
   end
