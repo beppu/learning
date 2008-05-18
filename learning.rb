@@ -29,15 +29,6 @@ module Learning::RequestWrapper
     @google_ad_slot    = Learning::GOOGLE_AD_SLOT
     @google_analytics  = Learning::GOOGLE_ANALYTICS
     response = super(*a)
-    if @remember_me
-      c = CGI::Cookie.new(
-        'name'    => 'camping_sid', 
-        'value'   => cookies.camping_sid, 
-        'path'    => '/', 
-        'expires' => (Time.now + 14.days)
-      )
-      headers['Set-Cookie'].push(c.to_s)
-    end
     response
   end
 end
