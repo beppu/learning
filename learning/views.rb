@@ -14,7 +14,7 @@ module Learning::Views
         end
       }
       body {
-        yield
+        self << yield
       }
     }
   end
